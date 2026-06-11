@@ -86,22 +86,42 @@ Data cleaning and transformation were performed using Power Query:
 ```DAX
 Total_Revenue = SUM(Data[Revenue])
 ```
+```DAX
 Total_Budget_Revenue = SUM(Data[Revenue Budget])
+```
+```DAX
 Budget_Variance = [Total_Revenue]-[Total_Budget_Revenue]
+```
+```DAX
 Total_Budget_variance% = DIVIDE([Budget_Variance],[Total_Budget_Revenue])
-
+```
+```DAX
 Total_Gross_profit = sum(Data[Gross Profit])
+```
+```DAX
 Gross_Margin% = DIVIDE([Total_Gross_profit],[Total_Revenue])
-
+```
+```DAX
 Total_EBITDA = sum(Data[EBITDA])
+```
+```DAX
 EBITDA% = DIVIDE([Total_EBITDA],[Total_Revenue])
-
+```
+```DAX
 
 Total_Cash_Inflow = SUM(Data[Cash Inflows])
+```
+```DAX
 Total_Cash_Outflow = SUM(Data[Cash Outflows] )
+```
+```DAX
 Net_Cash = SUM(Data[Cash Inflows])-SUM(Data[Cash Outflows])
+```
+```DAX
 
 Cash_Conversion_Rate = [Net_Cash]/[Total_EBITDA]
+```
+```DAX
 
 Receivable_Bucket = 
 SWITCH(
@@ -111,7 +131,8 @@ Data[Receivables Aging (Days)] <= 60,"31-60",
 Data[Receivables Aging (Days)] <= 90,"61-90",
 "90+"
 )
-
+```
+```DAX
 
 Payable_Bucket = 
 SWITCH(
@@ -121,6 +142,7 @@ Data[Payables Aging (Days)] <= 60,"31-60",
 Data[Payables Aging (Days)] <= 90,"61-90",
 "90+"
 )
+```
 
 
 ```
