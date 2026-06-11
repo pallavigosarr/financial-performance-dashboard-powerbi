@@ -64,7 +64,6 @@ The dataset contains monthly financial records from January 2023 to December 202
 * Region Filter
 * Product/Service Filter
 * Drill-Down Functionality
-* Drill-Through Detail Analysis Page
 
 ---
 
@@ -83,60 +82,60 @@ Data cleaning and transformation were performed using Power Query:
 
 ## DAX Measures Used
 
-### Revenue
 
 ```DAX
-Revenue = SUM(Finance[Revenue])
+Total_Revenue = SUM(Data[Revenue])
 ```
+Total_Budget_Revenue = SUM(Data[Revenue Budget])
+Budget_Variance = [Total_Revenue]-[Total_Budget_Revenue]
+Total_Budget_variance% = DIVIDE([Budget_Variance],[Total_Budget_Revenue])
 
-### Gross Margin %
+Total_Gross_profit = sum(Data[Gross Profit])
+Gross_Margin% = DIVIDE([Total_Gross_profit],[Total_Revenue])
 
-```DAX
-Gross Margin % =
-DIVIDE(
-[Gross Profit],
-[Revenue]
+Total_EBITDA = sum(Data[EBITDA])
+EBITDA% = DIVIDE([Total_EBITDA],[Total_Revenue])
+
+
+Total_Cash_Inflow = SUM(Data[Cash Inflows])
+Total_Cash_Outflow = SUM(Data[Cash Outflows] )
+Net_Cash = SUM(Data[Cash Inflows])-SUM(Data[Cash Outflows])
+
+Cash_Conversion_Rate = [Net_Cash]/[Total_EBITDA]
+
+Receivable_Bucket = 
+SWITCH(
+TRUE(),
+Data[Receivables Aging (Days)] <= 30,"0-30",
+Data[Receivables Aging (Days)] <= 60,"31-60",
+Data[Receivables Aging (Days)] <= 90,"61-90",
+"90+"
 )
-```
 
-### EBITDA %
 
-```DAX
-EBITDA % =
-DIVIDE(
-[EBITDA],
-[Revenue]
+Payable_Bucket = 
+SWITCH(
+TRUE(),
+Data[Payables Aging (Days)] <= 30,"0-30",
+Data[Payables Aging (Days)] <= 60,"31-60",
+Data[Payables Aging (Days)] <= 90,"61-90",
+"90+"
 )
-```
 
-### Net Cash
 
-```DAX
-Net Cash =
-SUM(Finance[Cash Inflows]) -
-SUM(Finance[Cash Outflows])
-```
-
-### Budget Variance %
-
-```DAX
-Budget Variance % =
-DIVIDE(
-[Revenue] - [Revenue Budget],
-[Revenue Budget]
-)
 ```
 
 ---
 
 ## Key Insights
 
-* Revenue trends can be monitored across months, quarters, and years.
-* Budget performance is evaluated through variance analysis.
-* Product-level profitability highlights top-performing offerings.
-* Regional analysis identifies high-contributing markets.
-* Aging reports help assess collection and payment efficiency.
-* Cash flow visualization provides insight into business liquidity.
+•	Elite Core Margins: The model highlights an exceptionally robust business structure, yielding a ~46% Gross Margin and a ~25% EBITDA. The resulting 20% overhead spread reflects highly disciplined cost controls.
+•	The ~12% CCR Crisis: Despite strong profitability, the Cash Conversion Rate (CCR) plummets to ~12%. This exposes a severe structural bottleneck. ~88% of accounting profits are trapped as "paper wealth" in unpaid invoices rather than converting to liquid cash.
+•	Credit Cycle Mismatch: While cash cycles appear synchronized on the surface, a micro-gap exists where Receivables Aging (76% in 31–60 days) lags behind Payable Aging (74% in 31–60 days). Customers hold company funds longer than the company holds vendor funds, starving the business of working capital.
+•	The November 2024 Anomaly: A major revenue-to-cash disconnect occurs in November 2024, booking peak revenue of ₹1,134k while net cash flows collapse into the bottom five lowest months at a meagre ₹13k. This signals an aggressive, uncollected credit push.
+•	Systemic Budget Deficits: The Company consistently underperforms against revenue budgets. The commercial variance peaks in October 2024 (₹450k deficit) and February 2024 (₹440k deficit), highlighting a breakdown in forecasting or sales execution.
+•	Segment Performance Traps: The South Region is the weakest top-line link (24.40% contribution) and the highest budget shortfall driver. Granular modelling isolates five specific regional product/service pairs driving over ₹2.7 Million in cumulative negative variance, led directly by East - Product A and West - Service Y.
+
 
 ---
 
