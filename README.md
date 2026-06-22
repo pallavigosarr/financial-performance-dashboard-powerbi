@@ -147,9 +147,11 @@ Data[Payables Aging (Days)] <= 90,"61-90",
 
 ```
 ## Screenshots:
-<img width="887" height="500" alt="Executive_Financial_Performance" src="https://github.com/user-attachments/assets/3f5c6b1a-3d89-4f18-a924-20602b0fa92d" />
 
-<img width="884" height="498" alt="Operational_Perfromance" src="https://github.com/user-attachments/assets/5b36b081-04b9-493f-9e74-7298f8c837b2" />
+<img width="887" height="500" alt="Executive_Financial_Performance" src="https://github.com/user-attachments/assets/7af24de6-0a11-44f3-b2e7-37386496e7bd" />
+
+<img width="884" height="498" alt="Operational_Perfromance" src="https://github.com/user-attachments/assets/76d1f3d1-c75f-4a80-9f0b-bc5881142613" />
+
 
 ---
 
