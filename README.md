@@ -196,57 +196,7 @@ financial-performance-dashboard-powerbi/
 │
 └── README.md
 
-* **Screenshots**:
 
-<img width="887" height="500" alt="Executive_Financial_Performance" src="https://github.com/user-attachments/assets/7af24de6-0a11-44f3-b2e7-37386496e7bd" />
-
-<img width="884" height="498" alt="Operational_Perfromance" src="https://github.com/user-attachments/assets/76d1f3d1-c75f-4a80-9f0b-bc5881142613" />
-
-
----
-
-## Key Insights
-
-•	Elite Core Margins: The model highlights an exceptionally robust business structure, yielding a ~46% Gross Margin and a ~25% EBITDA. The resulting 20% overhead spread reflects highly disciplined cost controls.
-•	The ~12% CCR Crisis: Despite strong profitability, the Cash Conversion Rate (CCR) plummets to ~12%. This exposes a severe structural bottleneck. ~88% of accounting profits are trapped as "paper wealth" in unpaid invoices rather than converting to liquid cash.
-•	Credit Cycle Mismatch: While cash cycles appear synchronized on the surface, a micro-gap exists where Receivables Aging (76% in 31–60 days) lags behind Payable Aging (74% in 31–60 days). Customers hold company funds longer than the company holds vendor funds, starving the business of working capital.
-•	The November 2024 Anomaly: A major revenue-to-cash disconnect occurs in November 2024, booking peak revenue of ₹1,134k while net cash flows collapse into the bottom five lowest months at a meagre ₹13k. This signals an aggressive, uncollected credit push.
-•	Systemic Budget Deficits: The Company consistently underperforms against revenue budgets. The commercial variance peaks in October 2024 (₹450k deficit) and February 2024 (₹440k deficit), highlighting a breakdown in forecasting or sales execution.
-•	Segment Performance Traps: The South Region is the weakest top-line link (24.40% contribution) and the highest budget shortfall driver. Granular modelling isolates five specific regional product/service pairs driving over ₹2.7 Million in cumulative negative variance, led directly by East - Product A and West - Service Y.
-
-
----
-
-## Tools & Technologies
-
-* Power BI Desktop
-* Power Query
-* DAX (Data Analysis Expressions)
-* Data Modeling
-* Interactive Dashboard Design
-
----
-
-## Project Structure
-
-```text
-financial-performance-dashboard-powerbi/
-│
-├── data/
-│   └── Financial_Data.xlsx
-│
-├── dashboard/
-│   └── Financial_Dashboard.pbix
-│
-├── Dashboard_Screenshots/
-│   ├── Executive_Financial_Performance.png
-│   └── Operational_Perfromance.png
-│
-├── Documentation/
-│   └── Executive_Summary.pdf
-│
-└── README.md
-```
 
 ---
 
