@@ -146,7 +146,8 @@ Data[Payables Aging (Days)] <= 90,"61-90",
 
 
 ```
-## Screenshots:
+
+* **Screenshots**:
 
 <img width="887" height="500" alt="Executive_Financial_Performance" src="https://github.com/user-attachments/assets/7af24de6-0a11-44f3-b2e7-37386496e7bd" />
 
