@@ -198,8 +198,6 @@ financial-performance-dashboard-powerbi/
 
 ---
 
-
-
 ## Business Impact
 
 This dashboard enables stakeholders to monitor profitability, budget adherence, cash flow position, and operational performance through a single interactive reporting solution. The project demonstrates practical skills in data modeling, DAX development, dashboard design, and business intelligence reporting using Power BI.
